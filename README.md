@@ -109,3 +109,13 @@ PhishingLess/
 - Fault-tolerant communication between browser and backend  
 
 - User-centered trust control system (whitelist, session bypass)  
+
+## Results (Model & System Evaluation)
+![Model Comparison](docs/model_comparison.png)
+
+![ROC Curve](docs/roc_curve.png)
+
+![Threshold](docs/threshold_tradeoff.png)
+The threshold selection demonstrates a trade-off between reducing false positives (important for user trust) and maintaining detection recall, which is critical for real-world browser deployment.
+
+![Ablation](docs/ablation.png)
