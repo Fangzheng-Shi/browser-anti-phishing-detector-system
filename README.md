@@ -64,6 +64,30 @@ The XGBoost model is selected for its balance between performance, interpretabil
 
 - Evaluation design covering both offline model performance and browser-side usability concerns
 
+## System Design Highlights
+
+- Event-driven browser architecture for real-time interaction handling  
+
+- Multi-stage interception pipeline (hover, navigation, warning page)  
+
+- Backend–frontend decoupling via REST API  
+
+- Caching and in-flight request guard to prevent duplicate detection  
+
+- Fault-tolerant communication between browser and backend  
+
+- User-centered trust control system (whitelist, session bypass)  
+
+## Results (Model & System Evaluation)
+![Model Comparison](docs/model_comparison.png)
+
+![ROC Curve](docs/roc_curve.png)
+
+![Threshold](docs/threshold_tradeoff.png)
+The threshold selection demonstrates a trade-off between reducing false positives (important for user trust) and maintaining detection recall, which is critical for real-world browser deployment.
+
+![Ablation](docs/ablation.png)
+
 ## System Architecture
 
 ```text
@@ -95,27 +119,3 @@ PhishingLess/
 ├── saved_models/
 
 └── README.md
-
-## System Design Highlights
-
-- Event-driven browser architecture for real-time interaction handling  
-
-- Multi-stage interception pipeline (hover, navigation, warning page)  
-
-- Backend–frontend decoupling via REST API  
-
-- Caching and in-flight request guard to prevent duplicate detection  
-
-- Fault-tolerant communication between browser and backend  
-
-- User-centered trust control system (whitelist, session bypass)  
-
-## Results (Model & System Evaluation)
-![Model Comparison](docs/model_comparison.png)
-
-![ROC Curve](docs/roc_curve.png)
-
-![Threshold](docs/threshold_tradeoff.png)
-The threshold selection demonstrates a trade-off between reducing false positives (important for user trust) and maintaining detection recall, which is critical for real-world browser deployment.
-
-![Ablation](docs/ablation.png)
